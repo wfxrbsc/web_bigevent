@@ -84,7 +84,7 @@ $(function () {
                 console.log(res.token);
                 //将登录成功的token字符串保存到localStrorage 中
                 localStorage.setItem('token', res.token);
-                location.href='/index.html';
+                location.href='index.html';
             }
         );
     });
