@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ce5bc52b-26d2-4ca6-91a0-34f9c08b3cf5" name="bigEvent" url="http://localhost:53737">
+        <fileTransfer mountedRoot="F:\webdevelop\demo\Phase4\bigEvent" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>

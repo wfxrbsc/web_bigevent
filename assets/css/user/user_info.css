@@ -1,0 +1,15 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-right: 15px;
+  background-color: #F2F3F5;
+}
+.layui-form {
+  width: 500px;
+}
+/*# sourceMappingURL=user_info.css.map */
