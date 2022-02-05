@@ -1,0 +1,17 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-right: 15px;
+  background-color: #F2F3F5;
+}
+.layui-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/*# sourceMappingURL=art_list.css.map */

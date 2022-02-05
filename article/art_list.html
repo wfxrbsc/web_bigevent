@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文章列表</title>
+    <link rel="stylesheet" href="http://localhost:53737/bigEvent/assets/lib/layui/css/layui.css"/>
+    <!--    导入自定义样式-->
+    <link rel="stylesheet" href="http://localhost:53737/bigEvent/assets/css/article/art_list.css">
+</head>
+<body>
+<!--卡片面板-->
+<div class="layui-card">
+    <div class="layui-card-header">文章列表</div>
+    <div class="layui-card-body">
+        <!--        文章筛模块-->
+        <form class="layui-form" id="formSearch">
+            <div class="layui-form-item layui-inline">
+                <div class="">
+                    <select name="cate_id" id="selCate">
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <div class="">
+                    <select name="state">
+                        <option value="">所有状态</option>
+                        <option value="已发布">已发布</option>
+                        <option value="草稿">草稿</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <div class="">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">筛选</button>
+                </div>
+            </div>
+        </form>
+        <!--        文章列表模块-->
+        <table class="layui-table">
+            <colgroup>
+                <col>
+                <col width="150">
+                <col width="180">
+                <col width="150">
+                <col width="150">
+            </colgroup>
+            <thead>
+            <tr>
+                <th>文章标题</th>
+                <th>分类</th>
+                <th>发表时间</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            </tbody>
+        </table>
+        <!--        分页模块-->
+        <div id="pageBox"></div>
+    </div>
+</div>
+<!--定义模板引擎-->
+<!--获取分类列表-->
+<script type="text/html" id="tpl-cate">
+    <option value="">所有分类</option>
+    {{each data}}
+    <option value="{{$value.Id}}">{{$value.name}}</option>
+    {{/each}}
+</script>
+<!--获取文章列表-->
+<script type="text/html" id="tpl-table">
+    {{each data}}
+    <tr>
+        <td>{{$value.title}}</td>
+        <td>{{$value.cate_name}}</td>
+        <td>{{$value.pub_date|dataFormat}}</td>
+        <td>{{$value.state}}</td>
+        <td>
+            <button type="button" class="layui-btn layui-btn-xs" id="btnEdit" data-id="{{$value.Id}}">编辑</button>
+            <button type="button" class="layui-btn layui-btn-danger layui-btn-xs btn-delete" data-id="{{$value.Id}}">删除</button>
+
+        </td>
+    </tr>
+    {{/each}}
+</script>
+<!--导入layui JS文件-->
+<script src="http://localhost:53737/bigEvent/assets/lib/layui/layui.all.js"></script>
+<!--导入JQ 文件-->
+<script src="http://localhost:53737/bigEvent/assets/lib/jquery.js"></script>
+<!--导入baseAPI文件-->
+<script src="http://localhost:53737/bigEvent/assets/js/baseAPI.js"></script>
+<!--导入自己的JS文件-->
+<!--引入模板引擎JS文件-->
+<script src="http://localhost:53737/bigEvent/assets/lib/template-web.js"></script>
+<script src="http://localhost:53737/bigEvent/assets/js/article/art_list.js"></script>
+</body>
+</html>
