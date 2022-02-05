@@ -152,27 +152,15 @@ $("tbody").on('click', '.btn-delete', function () {
 function editArtcile() {
     //通过代理的形式，根据ID更新文章信息
 
-    $("body").on('click', '#btnEdit', function () {
+    $("body").on('click', '#edit', function () {
         // 先完成文章发布页面，在做编辑功能
 //    获取当前的id值
         var id = $(this).attr('data-id');
         // 打开文章编辑页面
-
+//        将id存储到本地
+        localStorage.setItem("Id", id);
 //    根据ID把数据填充到默认页面
 //    通过ajax获取数据,
-        $.ajax({
-            method: 'GET',
-            url: '/my/article/'+id,
-            success: function (res) {
-                if (res.status !== 0) {
-                    return layer.msg(res.message)
-                }
-                // 渲染数据到模板引擎
-                location.href = '/article/art_pub.html'
-                form.val('form-pub', res.data);
-                layer.msg('加载成功了吗')
-            }
-        })
 
     })
 }
